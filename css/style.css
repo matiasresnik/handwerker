@@ -236,9 +236,31 @@ nav .nav-menu{
     display: flex;
     justify-content: center;
 }
-#clients .clients-carousel .clients-carousel-image{
+#clients .clients-carousel .clients-carousel-clients{
     width: 60vw;
     height: 60vh;
+}
+.clients-carousel-clients{
+    background-position: center;
+    background-size: cover;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-name: clients;
+    animation-duration: 10s;
+}
+@keyframes clients { 
+    0%{
+        animation: ease-in;
+        background-image: url(../assets/img/client1.jpeg);
+    }
+    50%{
+        animation: ease-out;
+        background-image: url(../assets/img/client2.jpeg);
+    }
+    100%{
+        animation: ease-in;
+        background-image: url(../assets/img/client3.jpeg);
+    }
 }
 
 
@@ -317,6 +339,8 @@ nav .nav-menu{
 
 footer{
     background-color: black;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0.3883928571428571) 30%, rgba(2,0,36,1) 96%);
     display: flex;
     flex-direction: column;
     align-items: center;

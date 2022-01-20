@@ -7,8 +7,21 @@ body{
     font-family: 'Oswald', sans-serif;
     background: whitesmoke 
 }
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    body{
+        font-size: 12px;
+    }
+}
 
 /*-----NAV-----*/
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    #contact .contact-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
 header,nav, .nav-logo, .nav-logo-text, .nav-menu, .nav-menu-list, .nav-menu-item {
     display:flex;
 }
@@ -20,6 +33,7 @@ nav{
     flex-direction: column;
     position: sticky;
     z-index: 2;
+
 }
 nav .nav-logo{
     background-color: whitesmoke;
@@ -55,64 +69,165 @@ nav .nav-menu{
 
 /*--SECTION INICIO--*/
 
+
 #home{
     display: flex;
-    background-image: url(./assets/img/bkg.jpeg);
+    background-image: url(../assets/img/bkg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    /*background-attachment: fixed;*/
+    /*height: 700px;*/
     width: 100vw;
-    height: 80vh;
+    height: 80vh;   
     position: relative;
     top: -20px;
     z-index: 1;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     
 }   
 #home .home-text{
-    font-size: 40px;
+    text-align: center;
     align-self: center;
-    justify-self: center;
-    width: 400px;
-    height: 100px;
+    width: 30vw;
+}
+#home .home-text .home-title{
+    font-size: 40px;
+}
+#home .home-text .home-subtitle{
+    font-size: 30px;
+
 }
 #home .home-banner{
     height: 80px;
     background-color: orange;
     width: 100vw;
     opacity: 60%;
-    justify-self: flex-end;
 }
 /*--SECTION ACERCA DE--*/
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    #aboutUs .about-us-content .about-us-facts{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
 #aboutUs{
     position: relative;
-}
+    position: relative;
+    top: -20px;
+    margin-bottom: -20px;
+
+}   
 #aboutUs .about-us-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#aboutUs .about-us-content .about-us-image{
+#aboutUs .about-us-content .about-us-message{
     display: flex;
     justify-content: center;
     width: 50%;
-}
-#aboutUs .about-us-content .about-us-image img{
-    width: 400px;
+    background-color: #e9e9e9;
+    flex-direction: column;
     height: 300px;
+    justify-content: space-around;
+    padding: 20px;
+
 }
-#aboutUs .about-us-content .about-us-text{
+#aboutUs .about-us-content .about-us-message .about-us-message-line {
+    width: 150px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: orange;
+
+}
+#aboutUs .about-us-content .about-us-message .about-us-message-title {
+    font-size: 30px;
+}   
+#aboutUs .about-us-content .about-us-message .about-us-message-subtitle {
+    color: orange;
+}
+/*#aboutUs .about-us-content .about-us-message .about-us-message-desc {
+
+}*/
+
+#aboutUs .about-us-content .about-us-facts{
+    display: flex;
     width: 50%;
+    background-color: whitesmoke;
+    justify-content: space-evenly  ;
+    align-items: center;
+}
+#aboutUs .about-us-content .about-us-facts i{
+    font-size: 40px;
+}
+#aboutUs .about-us-content .about-us-facts div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*--SECTION PRODUCTOS--*/
+#products{
+    background-color: #e9e9e9;
+}
+#products .products-container{
+    display: grid;
+    grid-template-areas:    "product1 product2 product3"
+                            "product4 product5 product6";
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#products .products-container .products-item1{
+    grid-area: product1;
+}
+#products .products-container .products-item2{
+    grid-area: product2;
+}
+#products .products-container .products-item3{
+    grid-area: product3;
+}
+#products .products-container .products-item4{
+    grid-area: product4;
+}
+#products .products-container .products-item5{
+    grid-area: product5;
+}
+#products .products-container .products-item6{
+    grid-area: product6;
+}
+/*#products .products-container .products-list{
+    display: flex;
+    justify-content: space-between;
+}*/
+#products .products-container .products-item img{
+    height: 20vw;
+    width:30vw;
+    border-radius: 10px;
+
+}
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    #home .home-text .home-title{
+        font-size: 20px;
+    }
+    #home .home-text .home-subtitle{
+        font-size: 15px;
+    
+    }
 }
 /*--SECTION SERVICIOS--*/
-#services .services-list{
+#services .services-list{   
     display: flex;
     justify-content: space-between;
 }
+
 #services .services-list .services-item img{
-    height: 228px;
-    width:327px;
+    height: 20vw;
+    width:30vw;
+
 }
 
 
@@ -121,15 +236,55 @@ nav .nav-menu{
     display: flex;
     justify-content: center;
 }
+#clients .clients-carousel .clients-carousel-clients{
+    width: 60vw;
+    height: 60vh;
+}
+.clients-carousel-clients{
+    background-position: center;
+    background-size: cover;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-name: clients;
+    animation-duration: 10s;
+}
+@keyframes clients { 
+    0%{
+        animation: ease-in;
+        background-image: url(../assets/img/client1.jpeg);
+    }
+    50%{
+        animation: ease-out;
+        background-image: url(../assets/img/client2.jpeg);
+    }
+    100%{
+        animation: ease-in;
+        background-image: url(../assets/img/client3.jpeg);
+    }
+}
+
+
 /*--SECTION CONTACT--*/
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    #contact .contact-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #contact .contact-content .contact-details .contact-details-map{
+        width: 100vw;
+    }
+
+}
 #contact .contact-content{
     display: flex;
     justify-content: space-around;
 }
 
 #contact .contact-content .contact-form {
-    width: 500px;
-    height: 300px;
+    width: 40vw;
+    height: 50vh;
     background-color: #c9c9c97c;
 }
 #contact .contact-content .contact-form form{
@@ -140,13 +295,17 @@ nav .nav-menu{
 }
 #contact .contact-content .contact-form form input{
     margin: 5px 0px;
-    width: 400px;
+    width: 35vw;
 }
 #contact .contact-content .contact-details{
     display: flex;
     flex-direction: column;
     align-content: flex-start;
 
+}
+#contact .contact-content .contact-details .contact-details-map{
+    width: 50vw;
+    height: 50vh; 
 }
 #contact .contact-content .contact-details .contact-details-contacts{
     display: flex;
@@ -160,14 +319,32 @@ nav .nav-menu{
     text-decoration: none;
     
 }
+@media screen and (min-device-width:320px) and (max-device-width:480px){
+    #contact .contact-content .contact-details .contact-details-map{
+        width: 100vw;
+        height: 50vh; 
+    }
+    #contact .contact-content .contact-form {
+        width: 100vw;
+        height: 50vh;
+        background-color: #c9c9c97c;
+    }
+    #contact .contact-content .contact-form form input{
+        margin: 5px 0px;
+        width: 90vw;
+    }
+}
 
 /*-----FOOTER-----*/
 
 footer{
-    background-color: grey;
+    background-color: black;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0.3883928571428571) 30%, rgba(2,0,36,1) 96%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: whitesmoke;
 }
 footer .footer-icons{
     display: flex;
@@ -177,5 +354,5 @@ footer .footer-icons i{
     margin: 10px 10px;
 }
 footer .footer-icons a{
-    color: black;
+    color: whitesmoke;
 }
